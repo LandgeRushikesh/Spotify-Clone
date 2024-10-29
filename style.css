@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto",sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+.invert{
+    filter: invert(1);
+}
+.left{
+    width: 23vw;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.logo img{
+    width: 77px;
+}
+.home-sec ul li{
+    list-style: none;
+    padding: 5px 0px;
+    margin-top: 15px;
+}
+.home-sec ul li i{
+    margin-right: 20px;
+    font-size: 20px;
+}
+.library{
+    min-height: 75vh;
+    position: relative;
+    top: 0;
+}
+.library .head{
+    justify-content: space-between;
+    margin: 0px 5px;
+}
+.library .head img{
+    width: 30px;
+    margin-right: 10px;
+}
+.songList{
+    height: 35vh;
+    overflow: auto;
+}
+.songList ol{
+    margin: 10px 0;
+    cursor: pointer;
+}
+.songList ol li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10px;
+    padding: 10px;
+    border: 2px solid#242424;;
+    border-radius: 10px;
+    background-color:#242424;;
+    color: white;
+}
+.songList .info{
+    width: 200px;
+    overflow-x: hidden;
+}
+.footer {
+    min-height: 30vh; 
+    position: absolute;
+    bottom: 0;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+.footer .links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5px;
+    justify-content: left;
+}
+.footer a{
+    text-decoration: none;
+    color:rgb(167, 167, 167);
+    font-size: 10px;
+}
+.footer .lang-btn{
+    background-color: #121212;
+    color: white;
+    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border:2px solid rgb(167, 167, 167);
+    font-size: 16px;
+}
+.footer .lang-btn i{
+    margin-right: 5px;
+}
+.right{
+    margin: 10px 5px;
+    position: relative;
+}
+.right{
+    width: 80vw;
+}
+.right .nav{
+    justify-content: space-between;
+}
+.right .right-left-btn i{
+    padding: 10px 12px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 3px;
+}
+.btn{
+    font-size: 16px;
+    font-weight: 700;
+}
+.right .signup-btn{
+    margin: 0px 20px;
+    background: none;
+    border: none;
+    color:rgb(167, 167, 167) ;
+}
+.right .signup-btn:hover{
+    color: white;
+}
+.right .login-btn{
+    margin: 0px 20px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: white;
+    color:black;
+}
+.cardContainer{
+    margin-top: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-height: 65vh ;
+    overflow-y: scroll;
+}
+.cardContainer .card{
+    position: relative;
+    padding: 20px;
+    width: 150px;
+}
+.cardContainer .card img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 13px;
+}
+.cardContainer .card p{
+    color:rgb(167, 167, 167) ;
+    font-size: 12px;
+}
+.cardContainer .card > *{
+    padding-top: 5px;
+}
+.cardContainer .card i{
+    padding: 14px 16px;
+    background-color: #1ed760;
+    border-radius: 50%;
+    color: black;
+}
+.cardContainer .card .play-btn{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 125px;
+    right: 20px;
+}
+.cardContainer .card:hover{
+    background-color: #242424;
+    border-radius: 10px;
+    opacity: 1;
+}
+.music-player{
+    min-width: 75vw;
+    position: fixed;
+    bottom: 15px;
+    background-color: #242424;;
+    padding: 15px;
+    padding-bottom: 7px;
+    border-radius: 30px;
+}
+.music-player .track{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+.music-player .songButtons{
+    gap: 20px;
+}
+.music-player .songTime{
+    display: flex;
+    justify-content: flex-end;
+}
+.music-player .songButtons i{
+    color: white;
+    font-size: 25px;
+}
+.music-player .seek-bar{
+    margin-top: 7px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+.music-player .indicator{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    position: relative;
+    bottom: 4px;
+    left: 0;
+}
