@@ -46,7 +46,7 @@ let getsongs = async ()=>{
                     <li class="play">
                         <i class="fa-solid fa-music"></i>
                         <p class="info">${songName}</p>
-                        <i class="fa-solid fa-play play-btn"></i>
+                        <div class="play-btn play"><i class="fa-solid fa-play "></i></div>
                     </li>
                 </ol>`
     }
@@ -56,44 +56,40 @@ async function main() {
     let song = await getsongs();
     let list = Array.from(document.body.querySelector(".songList").getElementsByTagName("li"))
 
-    console.log(list.forEach(element =>{
+    list.forEach(element =>{
         element.addEventListener("click",()=>{
             playMusic(element.querySelector(".info").textContent)
         })
-    }))
+    })
 } 
 
 let playMusic = (track)=>{
     // In JavaScript, the Audio.src property is used to set or get the source (URL) of the audio file that you want to play using the Audio object.
     currentSong.src = "http://127.0.0.1:3000/spotify_clone/songs/"+decodeURI(track)
-    currentSong.play();
+    
     document.body.querySelector(".songInfo").innerText = track;
     document.body.querySelector(".songTime").innerText = "00.00/00.00";
-    
-    
+    let playBtn = document.querySelector(".songButtons").querySelector(".play-btn")
     // update play-pause button
     document.querySelectorAll(".play").forEach(ele=>{
         // console.log(ele)
         ele.addEventListener("click",()=>{
-            let playPauseButton = ele.getElementsByClassName(".play-btn");
-            console.log("clicked")
-            if (playPauseButton.classList.contains("fa-play")) {
-                // If it has the play icon, change to pause
-                playPauseButton.classList.remove("fa-play");
-                playPauseButton.classList.add("fa-pause");
-            } else {
-                // If it has the pause icon, change to play
-                playPauseButton.classList.remove("fa-pause");
-                playPauseButton.classList.add("fa-play");
+            if(ele.querySelector(".play-btn").classList.contains("play")){
+                ele.querySelector(".play-btn").innerHTML = '<i class="fa-solid fa-pause"></i>'
+                ele.querySelector(".play-btn").classList.remove("play")
+                ele.querySelector(".play-btn").classList.add("pause")
+                playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'
+                currentSong.play();
             }
+            else if(ele.querySelector(".play-btn").classList.contains("pause")){
+                ele.querySelector(".play-btn").innerHTML = '<i class="fa-solid fa-play "></i>'
+                ele.querySelector(".play-btn").classList.remove("pause")
+                ele.querySelector(".play-btn").classList.add("play")
+                playBtn.innerHTML = '<i class="fa-solid fa-play "></i>'
+                currentSong.pause();
+            }   
         })
-    })
-   
-    
-    
-    
-    
-    
+    })    
 }
 
 // get song time update
