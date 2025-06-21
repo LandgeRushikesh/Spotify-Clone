@@ -1,8 +1,11 @@
 import React from 'react'
+import TrendingSongCard from "../TrendingSongCard/TrendingSongCard"
 
 function TrendingSongs() {
   return (
-    <div>TrendingSongs</div>
+    <div>
+      <TrendingSongCard song={{url:"",songName:"Sapphire",artist:"Ed Sheeran"}}/>
+    </div>
   )
 }
 
